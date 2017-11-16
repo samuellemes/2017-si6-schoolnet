@@ -2,7 +2,9 @@
   "name": "2017-si6-schoolnet",
   "version": "1.0.0",
   "description": "A simple Node.js application to calculate the students status",
-  "scripts": {},
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "Univas",
   "dependencies": {
     "body-parser": "^1.18.2",
