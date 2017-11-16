@@ -1,4 +1,4 @@
-const students = require('../../question-03/studentsDB.json')
+const students = require('../db/studentsDB.json')
 
 function getStudentId() {
     return process.argv[2] || null
