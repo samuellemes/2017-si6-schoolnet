@@ -7,8 +7,17 @@
     <title>SchoolNet</title>
 </head>
 <body>
-    <h1>SchoolNet</h1>
-    <P>Name: <%= name %></P>
-    <p>Email: <%= email %</p>
+
+    <form action="/status" method="GET">
+        <input type="text" name="studentId">
+        <input type="submit" value="Ok">
+    </form>
+    <% if(student) { %>
+        <p>Name: <%= student.name %></p>
+        <p>Average: <%= student.average %></p>
+        <p>Status: <%= student.status %></p>
+    <% } else if(submitted) { %>
+        <p>Student not found!</p>
+    <% } %>
 </body>
 </html>

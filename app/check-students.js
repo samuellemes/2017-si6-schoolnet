@@ -27,14 +27,26 @@ function getStatus(average) {
 
 const student = students.find(byId)
 
-if (student) {
-    const average = getAverage(student.grades)
-    const status = getStatus(average)
+// if (student) {
+//     const average = getAverage(student.grades)
+//     const status = getStatus(average)
 
-    console.log('Name: ' + student.name)
-    console.log('Average: ' + average)
-    console.log('Status: ' + status)
-}
-else {
-    console.log('Student not found!')
+//     console.log('Name: ' + student.name)
+//     console.log('Average: ' + average)
+//     console.log('Status: ' + status)
+// }
+// else {
+//     console.log('Student not found!')
+// }
+
+module.exports = {
+    getStudentStatus(id) {
+        let student = students.find(student => student.id == id)
+        if(student) {
+            const average = getAverage(student.grades)
+            student.average = average
+            student.status = getStatus(average)
+        }
+        return student
+    }
 }
